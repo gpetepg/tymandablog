@@ -1,5 +1,4 @@
 /* images */
-/* # is for id */
 
 .background {
     height: 850px;
@@ -65,14 +64,15 @@
 
 .picture-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    justify-items: center;
-    background-color: #ffffff
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    background-color: #ffffff;
 }
 
 .picture-grid>img {
-    height: 240px;
-    width: 240px;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    object-fit: cover; 
     border: 1px solid #ffffff;
 }
 

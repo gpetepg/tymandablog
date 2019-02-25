@@ -12,16 +12,12 @@
         </div>
         <div class="picture-grid">
             {% for photo in london_photos: %}
-                <img src ='{{photo}}' alt="Unloadable Photo">
+                <img id="Img" src ='{{photo}}' alt="Unloadable Photo">
             {% endfor %}
         </div>
         <div id="Modal" class="modal">  
+            <span class="close">&times;</span>
             <img class="modal-content" id="pop_image">
         </div>
     </body>
 {% endblock %}
-
-
-
-
-      

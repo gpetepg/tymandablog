@@ -27,11 +27,10 @@
                 $(this).on("click", function() {
                     modal.style.display = "block";
                     modalImg.src = this.src;
-                    captionText.innerHTML = this.alt;
-                })
+                    })
             })
 
-            var span = document.getElementsByClassName("close")[0];
+            var span = document.getElementById('Modal');
             span.onclick = function() { 
                 modal.style.display = "none";
             }

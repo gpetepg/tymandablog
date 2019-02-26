@@ -63,15 +63,13 @@
 
 .picture-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    background-color: #ffffff;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-flow: inherit;
 }
 
-.picture-grid>img {
+.grid-item {
     max-width: 100%;
-    height: auto;
-    width: auto;
-    object-fit: cover; 
+    max-height: 100%;
     border: 1px solid #ffffff;
 }
 
@@ -103,8 +101,3 @@
     width: 80%;
     max-width: 700px;
   }
-
-.close {
-    font-size: 35px;
-    color: #ffffff
-}

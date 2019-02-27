@@ -4,19 +4,21 @@ from imgurpython.helpers.error import ImgurClientError
 from flask import Blueprint
 from .config import Config
 
-blueprint = Blueprint('blog', __name__, template_folder='templates')
 
+blueprint = Blueprint('blog', __name__, template_folder='templates')
 
 try:
     client = ImgurClient(Config.CLIENT_ID, Config.CLIENT_SECRET)
 except ImgurClientError as e:
     print(e.error_message, e.status_code)
 
+# Home page
 
 @blueprint.route('/')
 def homepage():
     return render_template('homepage.html')
 
+# Locations
 
 @blueprint.route('/london')
 def london():
@@ -65,6 +67,13 @@ def seattle():
 def paris():
     return render_template('paris.html')
 
+
+@blueprint.route('/philadelphia')
+def philadelphia():
+    philadelphia_photos = [x for x in [item.link for item in client.get_album_images('AEkStsy')] if '.jpg' in x]
+    return render_template('philadelphia.html', philadelphia_photos=philadelphia_photos)
+
+# Resume
 
 @blueprint.route('/resume')
 def return_pdf():

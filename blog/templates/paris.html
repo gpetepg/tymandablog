@@ -1,22 +1,19 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <head>
-        <link rel="stylesheet" type="text/css" href="static/blog.css">
-    </head>
     <body>
         <div class="background" style="background-image: url('/static/paris.jpg');">
             <div>
                 <p style="color: #000000"; class="background-text">PARIS</p>
             </div>
         </div>
-        <!-- <div class="picture-grid">
-            {% for photo in london_photos: %}
-                <img src ='{{photo}}' alt="Unloadable Photo">
+        <div class="picture-grid">
+            {% for photo in paris_photos: %}
+                <img class="img-fluid" src ='{{photo}}' alt="Unloadable Photo">
             {% endfor %}
         </div>
         <div id="Modal" class="modal">  
             <img class="modal-content" id="pop_image">
-        </div> -->
+        </div>
     </body>
 {% endblock %}

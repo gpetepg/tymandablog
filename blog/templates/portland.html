@@ -1,4 +1,22 @@
 {% extends 'layout.html' %}
-{% block body %}
 
+{% block body %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/blog.css">
+    </head>
+    <body>
+        <div class="background" style="background-image: url('/static/portland.jpg');">
+            <div>
+                <p style="color: #ffffff"; class="background-text">PORTLAND</p>
+            </div>
+        </div>
+        <div class="picture-grid">
+            {% for photo in portland_photos: %}
+                <img class="grid-item" id="Img" src ='{{photo}}' alt="Unloadable Photo">
+            {% endfor %}
+        </div>
+        <div id="Modal" class="modal">  
+            <img class="modal-content" id="pop_image">
+        </div>
+    </body>
 {% endblock %}

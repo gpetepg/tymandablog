@@ -20,64 +20,23 @@ def homepage():
 
 # Locations
 
-@blueprint.route('/london')
-def london():
-    london_photos = [x for x in [item.link for item in client.get_album_images('VcG7CLZ')] if '.jpg' in x]
-    return render_template('london.html', london_photos=london_photos)
+locations = {
+    "london" : "VcG7CLZ",
+    "thailand": "NJ3qhK4",
+    "bayarea" : "G5aYs7L",
+    "chicago" : "WuYSP4B",
+    "portland" : "2SDUNao",
+    "losangeles" : "tqPQSGb",
+    "sandiego" : "G2kP8GY",
+    "seattle" : "25wMsrQ",
+    "paris" : "WlKdngR",
+    "philly" : "AEkStsy'",
+}
 
-
-@blueprint.route('/thailand')
-def thailand():
-    thai_photos = [x for x in [item.link for item in client.get_album_images('NJ3qhK4')] if '.jpg' in x]
-    return render_template('thailand.html', thai_photos=thai_photos)
-
-
-@blueprint.route('/bayarea') 
-def bayarea():
-    bay_photos = [x for x in [item.link for item in client.get_album_images('G5aYs7L')] if '.jpg' in x]
-    return render_template('bayarea.html', bay_photos=bay_photos)
-
-
-@blueprint.route('/chicago')
-def chicago():
-    chicago_photos = [x for x in [item.link for item in client.get_album_images('WuYSP4B')] if '.jpg' in x]
-    return render_template('chicago.html', chicago_photos=chicago_photos)
-
-
-@blueprint.route('/portland')
-def portland():
-    portland_photos = [x for x in [item.link for item in client.get_album_images('2SDUNao')] if '.jpg' in x]
-    return render_template('portland.html', portland_photos=portland_photos)
-
-
-@blueprint.route('/losangeles')
-def losangeles():
-    losangeles_photos = [x for x in [item.link for item in client.get_album_images('tqPQSGb')] if '.jpg' in x]
-    return render_template('losangeles.html', losangeles_photos=losangeles_photos)
-
-
-@blueprint.route('/sandiego')
-def sandiego():
-    sandiego_photos = [x for x in [item.link for item in client.get_album_images('G2kP8GY')] if '.jpg' in x]
-    return render_template('sandiego.html', sandiego_photos=sandiego_photos)
-
-
-@blueprint.route('/seattle')
-def seattle():
-    seattle_photos = [x for x in [item.link for item in client.get_album_images('25wMsrQ')] if '.jpg' in x]
-    return render_template('seattle.html', seattle_photos=seattle_photos)
-
-
-@blueprint.route('/paris')
-def paris():
-    paris_photos = [x for x in [item.link for item in client.get_album_images('WlKdngR')] if '.jpg' in x]
-    return render_template('paris.html', paris_photos=paris_photos)
-
-
-@blueprint.route('/philadelphia')
-def philadelphia():
-    philadelphia_photos = [x for x in [item.link for item in client.get_album_images('AEkStsy')] if '.jpg' in x]
-    return render_template('philadelphia.html', philadelphia_photos=philadelphia_photos)
+@blueprint.route('/<name>')
+def location(name):
+    photos = [x for x in [item.link for item in client.get_album_images(locations[f'{name}'])] if '.jpg' in x]
+    return render_template(f'{name}.html', photos=photos)
 
 # Resume
 

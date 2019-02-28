@@ -32,9 +32,10 @@ def thailand():
     return render_template('thailand.html', thai_photos=thai_photos)
 
 
-@blueprint.route('/yosemite') 
-def yosemite():
-    return render_template('yosemite.html')
+@blueprint.route('/bayarea') 
+def bayarea():
+    bay_photos = [x for x in [item.link for item in client.get_album_images('G5aYs7L')] if '.jpg' in x]
+    return render_template('bayarea.html', bay_photos=bay_photos)
 
 
 @blueprint.route('/chicago')
@@ -45,27 +46,32 @@ def chicago():
 
 @blueprint.route('/portland')
 def portland():
-    return render_template('portland.html')
+    portland_photos = [x for x in [item.link for item in client.get_album_images('2SDUNao')] if '.jpg' in x]
+    return render_template('portland.html', portland_photos=portland_photos)
 
 
 @blueprint.route('/losangeles')
 def losangeles():
-    return render_template('losangeles.html')
+    losangeles_photos = [x for x in [item.link for item in client.get_album_images('tqPQSGb')] if '.jpg' in x]
+    return render_template('losangeles.html', losangeles_photos=losangeles_photos)
 
 
 @blueprint.route('/sandiego')
 def sandiego():
-    return render_template('sandiego.html')
+    sandiego_photos = [x for x in [item.link for item in client.get_album_images('G2kP8GY')] if '.jpg' in x]
+    return render_template('sandiego.html', sandiego_photos=sandiego_photos)
 
 
 @blueprint.route('/seattle')
 def seattle():
-    return render_template('seattle.html')
+    seattle_photos = [x for x in [item.link for item in client.get_album_images('25wMsrQ')] if '.jpg' in x]
+    return render_template('seattle.html', seattle_photos=seattle_photos)
 
 
 @blueprint.route('/paris')
 def paris():
-    return render_template('paris.html')
+    paris_photos = [x for x in [item.link for item in client.get_album_images('WlKdngR')] if '.jpg' in x]
+    return render_template('paris.html', paris_photos=paris_photos)
 
 
 @blueprint.route('/philadelphia')

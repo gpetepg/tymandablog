@@ -2,13 +2,13 @@
 
 {% block body %}
     <body>
-        <div class="background" style="background-image: url('/static/paris.jpg');">
+        <div class="background" style="background-image: url('/static/sf.jpg');">
             <div>
-                <p style="color: #000000"; class="background-text">PARIS</p>
+                <p style="color: #000000"; class="background-text">BAY AREA</p>
             </div>
         </div>
         <section class="picture-grid">
-                {% for photo in paris_photos %}
+                {% for photo in bay_photos %}
                     <img class="img" src ='{{photo}}' alt="Unloadable Photo">
                 {% endfor %}
             </section>

@@ -20,23 +20,24 @@ def homepage():
 
 # Locations
 
-locations = {
-    "london" : "VcG7CLZ",
-    "thailand": "NJ3qhK4",
-    "bayarea" : "G5aYs7L",
-    "chicago" : "WuYSP4B",
-    "portland" : "2SDUNao",
-    "losangeles" : "tqPQSGb",
-    "sandiego" : "G2kP8GY",
-    "seattle" : "25wMsrQ",
-    "paris" : "WlKdngR",
-    "philly" : "AEkStsy'",
-}
-
 @blueprint.route('/<name>')
 def location(name):
-    photos = [x for x in [item.link for item in client.get_album_images(locations[f'{name}'])] if '.jpg' in x]
-    return render_template(f'{name}.html', photos=photos)
+
+    locations = {
+        "london" : "VcG7CLZ",
+        "thailand": "NJ3qhK4",
+        "bayarea" : "G5aYs7L",
+        "chicago" : "WuYSP4B",
+        "portland" : "2SDUNao",
+        "losangeles" : "tqPQSGb",
+        "sandiego" : "G2kP8GY",
+        "seattle" : "25wMsrQ",
+        "paris" : "WlKdngR",
+        "philly" : "AEkStsy'",
+    }
+    
+    photos = [x for x in [item.link for item in client.get_album_images(locations[name])] if x.endswith('.jpg')]
+    return render_template(name+'.html', photos=photos)
 
 # Resume
 

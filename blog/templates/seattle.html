@@ -1,5 +1,19 @@
 {% extends 'layout.html' %}
+
 {% block body %}
-<h1>fontawesome</h1>
-<i class="fas fa-bicycle"></i>
+    <body>
+        <div class="background" style="background-image: url('/static/seattle.jpg');">
+            <div>
+                <p style="color: #ffffff"; class="background-text">SEATTLE</p>
+            </div>
+        </div>
+        <section class="picture-grid">
+            {% for photo in seattle_photos %}
+                <img class="img" src ='{{photo}}' alt="Unloadable Photo">
+            {% endfor %}
+        </section>
+        <div id="Modal" class="modal">  
+            <img class="modal-content" id="pop_image">
+        </div>
+    </body>
 {% endblock %}

@@ -2,11 +2,7 @@
 
 {% block body %}
     <body>
-        <div class="background" style="background-image: url('/static/chicago.jpg');">
-            <div>
-                <p style="color: #000000"; class="background-text">CHICAGO</p>
-            </div>
-        </div>
+        <div class="background" style="background-image: url('/static/chicago.jpg');"></div>
         <section class="picture-grid">
             {% for photo in chicago_photos %}
                 <img class="img" src ='{{photo}}' alt="Unloadable Photo">

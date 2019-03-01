@@ -33,7 +33,7 @@ def location(name):
         "sandiego" : "G2kP8GY",
         "seattle" : "25wMsrQ",
         "paris" : "WlKdngR",
-        "philly" : "AEkStsy'",
+        "philadelphia" : "AEkStsy",
     }
     
     photos = [x for x in [item.link for item in client.get_album_images(locations[name])] if x.endswith('.jpg')]

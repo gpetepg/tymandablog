@@ -1,12 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <body>
-        <div class="background" style="background-image: url('/static/sd.jpg');">
-            <div>
-                <p style="color: #fcf4b4"; font-size=30vw; class="background-text">SAN DIEGO</p>
-            </div>
+    <div class="background" style="background-image: url('/static/sd.jpg');">
+        <div>
+            <p style="color: #ffffff" class="background-text">SAN DIEGO</p>
         </div>
-        {% include 'includes/_picturegrid.html' %}
-    </body>
+    </div>
+    {% include 'includes/_picturegrid.html' %}
 {% endblock %}

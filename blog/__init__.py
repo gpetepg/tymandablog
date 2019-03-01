@@ -19,8 +19,8 @@ def create_app(config=None):
         raise ValueError('Incorrect configuration')
 
     # extensions
-    # db.init_app(app)
-    # migrate.init_app(app, db)
+    db.init_app(app)
+    migrate.init_app(app, db)
 
     # blueprints
     from .routes import blueprint as blog

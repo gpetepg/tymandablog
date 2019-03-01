@@ -12,5 +12,5 @@ Personal blog.
  `ps ax | grep <PID>` Search for the PID if necessary
  `kill -QUIT <PID>` Kill the process ID
 
- Photos from:
+ Landing page photos from:
  - https://unsplash.com

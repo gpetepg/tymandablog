@@ -1,4 +1,10 @@
 {% extends 'layout.html' %}
-{% block body %}
 
+{% block body %}
+    <div class="background" style="background-image: url('/static/portland.jpg');">
+        <div>
+            <p style="color: #d1c2fa"; class="background-text">PORTLAND</p>
+        </div>
+    </div>
+    {% include 'includes/_picturegrid.html' %}
 {% endblock %}

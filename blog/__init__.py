@@ -1,5 +1,5 @@
 from flask import Flask
-from blog.extensions import db, migrate
+from blog.extensions import db, migrate, cache
 import blog.config as configure
 import os
 
@@ -21,6 +21,7 @@ def create_app(config=None):
     # extensions
     db.init_app(app)
     migrate.init_app(app, db)
+    cache.init_app(app)
 
     # blueprints
     from .routes import blueprint as blog

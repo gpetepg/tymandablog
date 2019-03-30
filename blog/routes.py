@@ -3,6 +3,7 @@ from imgurpython import ImgurClient
 from imgurpython.helpers.error import ImgurClientError
 from flask import Blueprint
 from .config import Config
+from blog.extensions import cache
 
 
 blueprint = Blueprint('blog', __name__, template_folder='templates')
@@ -15,12 +16,14 @@ except ImgurClientError as e:
 # Home page
 
 @blueprint.route('/')
+@cache.cached(timeout=50)
 def homepage():
     return render_template('homepage.html')
 
 # Locations
 
 @blueprint.route('/<name>')
+@cache.cached(timeout=50)
 def location(name):
 
     locations = {
@@ -42,5 +45,6 @@ def location(name):
 # Resume
 
 @blueprint.route('/resume')
+@cache.cached(timeout=50)
 def return_pdf():
     return send_file('static/resume.pdf')

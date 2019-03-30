@@ -3,7 +3,7 @@
 #
 
 ifeq (${BLOG_DIR},)
-  $(error source ./ht-setup.env first.)
+  $(error source ./setup.env first.)
 endif
 
 SHELL:=bash

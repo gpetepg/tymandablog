@@ -47,4 +47,4 @@ def location(name):
 @blueprint.route('/resume')
 @cache.cached(timeout=50)
 def return_pdf():
-    return send_file('static/resume.pdf')
+    return send_file('static/TylerGuoResume.pdf')

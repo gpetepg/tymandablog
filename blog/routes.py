@@ -4,6 +4,8 @@ from imgurpython.helpers.error import ImgurClientError
 from flask import Blueprint
 from .config import Config
 from blog.extensions import cache
+from flask import send_from_directory
+import os
 
 
 blueprint = Blueprint('blog', __name__, template_folder='templates')
@@ -14,6 +16,12 @@ except ImgurClientError as e:
     print(e.error_message, e.status_code)
 
 # Home page
+
+
+@blueprint.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='Cookie.png')
 
 @blueprint.route('/')
 @cache.cached(timeout=50)

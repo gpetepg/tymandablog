@@ -8,7 +8,7 @@ from flask import send_from_directory
 import os
 
 
-blueprint = Blueprint('blog', __name__, template_folder='templates')
+blueprint = Blueprint('blog', __name__, static_folder='static', template_folder='templates')
 
 try:
     client = ImgurClient(Config.CLIENT_ID, Config.CLIENT_SECRET)
@@ -20,7 +20,7 @@ except ImgurClientError as e:
 
 @blueprint.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
+    return send_from_directory(os.path.join(blueprint.root_path, 'static'),
                                'favicon.ico', mimetype='Cookie.png')
 
 @blueprint.route('/')

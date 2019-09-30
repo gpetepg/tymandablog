@@ -1,0 +1,16 @@
+server {
+	listen [::]:80;
+	listen [::]:9001;
+	listen [::]:443;
+	server_name ;
+	
+	location /static {
+		alias /home/tyler/tymandablog/blog/static;
+	}	
+
+	location / {
+		proxy_pass http://localhost:8000;
+		include /etc/nginx/proxy_params;
+		proxy_redirect off;
+	}
+}

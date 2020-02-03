@@ -3,11 +3,13 @@ body {
 }
 
 .background {
-    height: 100vh;
+    height: 94.3vh;
     background-color: #ffffff;
     background-position: center, center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    overflow: hidden;
   }
 
 .background-text {
@@ -19,6 +21,19 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     position: absolute;
+    overflow: hidden;
+  } 
+
+.background-text2 {
+    font-size: 11vw;
+    font-family: 'Bungee Shade', cursive;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: absolute;
+    overflow: hidden;
   } 
 
 .blurb{

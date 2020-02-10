@@ -76,8 +76,8 @@ body {
 }
 
 .picture-grid{
-    column-count:         3;
-    column-gap:           0px;  
+    column-count: 3;
+    column-gap: 0px;  
   }
   
 .picture-grid > img {
